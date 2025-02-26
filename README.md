@@ -18,7 +18,7 @@ bun build:elm
 To compile your [Sass](https://sass-lang.com/) stylesheets, run:
 
 ```sh
-bun build:sass
+bun build:css
 ```
 
 To see your changes, use any web server. Python itself has a built-in one:
