@@ -1,0 +1,21 @@
+{
+  "name": "fish-community.github.io",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "elm-format": "^0.8.7",
+    "elm": "^0.19.1-6",
+    "sass-embedded": "^1.85.1"
+  },
+  "scripts": {
+    "build:css": "sass style.sass style.css",
+    "build:elm": "elm make src/* --output elm.js",
+    "format:elm": "elm-format src/"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+  }
+}
