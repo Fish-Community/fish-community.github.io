@@ -5161,13 +5161,63 @@ var $elm$core$Task$perform = F2(
 var $elm$browser$Browser$element = _Browser_element;
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
+var $author$project$Servers$init = function (_v0) {
+	return _Utils_Tuple2(_Utils_Tuple0, $elm$core$Platform$Cmd$none);
+};
+var $elm$core$Platform$Sub$batch = _Platform_batch;
+var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
+var $author$project$Servers$subscriptions = function (_v0) {
+	return $elm$core$Platform$Sub$none;
+};
+var $author$project$Servers$update = F2(
+	function (_v0, _v1) {
+		return _Utils_Tuple2(_Utils_Tuple0, $elm$core$Platform$Cmd$none);
+	});
+var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$string(string));
+	});
+var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
+var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$Servers$serverDiv = function (server) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('server')
+			]),
+		_List_fromArray(
+			[
+				$elm$html$Html$text(server.name)
+			]));
+};
+var $author$project$Config$servers = _List_fromArray(
+	[
+		{color: 'cyan', location: '162.248.101.95', name: 'Survival'}
+	]);
+var $author$project$Servers$view = function (_v0) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$id('servers')
+			]),
+		A2($elm$core$List$map, $author$project$Servers$serverDiv, $author$project$Config$servers));
+};
+var $author$project$Servers$main = $elm$browser$Browser$element(
+	{init: $author$project$Servers$init, subscriptions: $author$project$Servers$subscriptions, update: $author$project$Servers$update, view: $author$project$Servers$view});
 var $author$project$Main$init = function (_v0) {
 	return _Utils_Tuple2(
 		{message: 'Hello World!'},
 		$elm$core$Platform$Cmd$none);
 };
-var $elm$core$Platform$Sub$batch = _Platform_batch;
-var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $author$project$Main$subscriptions = function (model) {
 	return $elm$core$Platform$Sub$none;
 };
@@ -5176,8 +5226,6 @@ var $author$project$Main$update = F2(
 		return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 	});
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$view = function (model) {
 	return A2(
 		$elm$html$Html$h1,
@@ -5189,5 +5237,7 @@ var $author$project$Main$view = function (model) {
 };
 var $author$project$Main$main = $elm$browser$Browser$element(
 	{init: $author$project$Main$init, subscriptions: $author$project$Main$subscriptions, update: $author$project$Main$update, view: $author$project$Main$view});
-_Platform_export({'Main':{'init':$author$project$Main$main(
+var $author$project$Config$main = $elm$html$Html$text('Don\'t use this module to render HTML.');
+_Platform_export({'Config':{'init':_VirtualDom_init($author$project$Config$main)(0)(0)},'Servers':{'init':$author$project$Servers$main(
+	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)},'Main':{'init':$author$project$Main$main(
 	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}});}(this));

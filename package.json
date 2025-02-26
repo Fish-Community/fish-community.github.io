@@ -17,5 +17,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "destyle.css": "^4.0.1"
   }
 }

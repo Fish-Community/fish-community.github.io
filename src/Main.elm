@@ -38,7 +38,7 @@ view model =
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update _ model =
-    (model, Cmd.none)
+    ( model, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
